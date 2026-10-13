@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environment
+.venv/
+
+# Notebook
+.ipynb_checkpoints/
+
+# Logs (keep the directory placeholder)
+logs/*
+!logs/.gitkeep
+
+# Model files
+models/*.pkl
+models/*.joblib
+
+# Data files (keep documentation/placeholders only)
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+data/features/*
+!data/features/.gitkeep
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
