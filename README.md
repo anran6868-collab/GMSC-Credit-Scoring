@@ -42,7 +42,7 @@ GMSC-Credit-Scoring/
 
 ## 当前阶段
 
-阶段 2（EDA 与数据清洗）已完成，当前等待用户验收。阶段 3 尚未开始；目前没有分箱、WOE/IV、模型训练或应用页面实现。
+阶段 3（特征工程、OptimalBinning、WOE 与 IV）已完成并通过用户验收。阶段 4 尚未开始；目前没有 Logistic、PDO 信用评分、模型评价或应用页面实现。
 
 ## Windows 环境安装
 
@@ -79,6 +79,15 @@ GMSC-Credit-Scoring/
 ```
 
 流程使用固定随机种子 42，先分层划分，再仅用训练集分析和拟合清洗规则。逐行清洗结果、划分清单与规则写入被 Git 忽略的 `data/processed/`；汇总表、20 张图和逐图中文解释位于 `reports/`。两本中文 Notebook 位于 `notebooks/`，包含真实数据运行输出。
+
+## 第三阶段复现
+
+```powershell
+.\.venv\Scripts\python.exe -m src.feature_engineering.run_stage3
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+流程保留 10 个原始变量，增加 7 个业务衍生变量并评估 3 个质量标记。OptimalBinning、WOE 和 IV 只使用训练集拟合；验证集只计算不使用标签的 PSI，测试集只应用规则并检查转换完整性。逐行特征、分箱和 WOE 数据写入被 Git 忽略的 `data/features/`，本地分箱器写入被忽略的 `models/`；综合 Excel、22 张图和逐变量中文解释位于 `reports/`。
 
 ## 七阶段开发计划
 

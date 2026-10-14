@@ -1,0 +1,16 @@
+{
+  "candidate_feature_count": 20,
+  "derived_feature_count": 7,
+  "split_sizes": {
+    "train": 105000,
+    "validation": 22500,
+    "test": 22500
+  },
+  "stage4_candidate_count": 11,
+  "high_iv_review_count": 6,
+  "unstable_review_count": 0,
+  "high_correlation_pair_count": 7,
+  "chart_count": 22,
+  "report": "D:\\AI project\\GMSC-Credit-Scoring\\reports\\excel\\stage3_woe_iv_analysis.xlsx",
+  "artifact": "D:\\AI project\\GMSC-Credit-Scoring\\models\\stage3_binning.joblib"
+}
