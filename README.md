@@ -42,7 +42,7 @@ GMSC-Credit-Scoring/
 
 ## 当前阶段
 
-阶段 1（项目初始化、Git 配置和开发环境准备）已完成，当前等待用户验收。阶段 2 尚未开始，仓库中没有 EDA、数据处理、模型训练或应用页面实现。
+阶段 2（EDA 与数据清洗）已完成，当前等待用户验收。阶段 3 尚未开始；目前没有分箱、WOE/IV、模型训练或应用页面实现。
 
 ## Windows 环境安装
 
@@ -63,13 +63,22 @@ GMSC-Credit-Scoring/
 
 ## 原始数据
 
-请用户自行从 Kaggle 下载以下文件并放入 `data/raw/`：
+请用户自行从 Kaggle 下载以下文件并放入 `data/raw/`。当前项目中的文件名为：
 
-- `cs-training.csv`
-- `cs-test.csv`
+- `GiveMeSomeCredit-training.csv`（也支持 `cs-training.csv`）
+- `GiveMeSomeCredit-testing.csv`（也支持 `cs-test.csv`）
 - `Data Dictionary.xls`
 
-项目不会自动下载或修改原始数据，原始数据也不会提交到 Git。
+项目不会自动下载或修改原始数据，原始数据也不会提交到 Git。无标签的 Kaggle 测试文件不用于模型评价；项目的 70%/15%/15% 三组数据来自有标签的训练文件。
+
+## 第二阶段复现
+
+```powershell
+.\.venv\Scripts\python.exe -m src.data_processing.run_stage2
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+流程使用固定随机种子 42，先分层划分，再仅用训练集分析和拟合清洗规则。逐行清洗结果、划分清单与规则写入被 Git 忽略的 `data/processed/`；汇总表、20 张图和逐图中文解释位于 `reports/`。两本中文 Notebook 位于 `notebooks/`，包含真实数据运行输出。
 
 ## 七阶段开发计划
 
