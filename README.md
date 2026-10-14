@@ -42,7 +42,7 @@ GMSC-Credit-Scoring/
 
 ## 当前阶段
 
-阶段 3（特征工程、OptimalBinning、WOE 与 IV）已完成并通过用户验收。阶段 4 尚未开始；目前没有 Logistic、PDO 信用评分、模型评价或应用页面实现。
+阶段 4（Logistic、PD、PDO 与信用评分卡）已完成并通过用户验收。阶段 5 尚未开始；测试集标签仍未读取，目前没有 Random Forest、XGBoost、SHAP 或应用页面实现。
 
 ## Windows 环境安装
 
@@ -88,6 +88,15 @@ GMSC-Credit-Scoring/
 ```
 
 流程保留 10 个原始变量，增加 7 个业务衍生变量并评估 3 个质量标记。OptimalBinning、WOE 和 IV 只使用训练集拟合；验证集只计算不使用标签的 PSI，测试集只应用规则并检查转换完整性。逐行特征、分箱和 WOE 数据写入被 Git 忽略的 `data/features/`，本地分箱器写入被忽略的 `models/`；综合 Excel、22 张图和逐变量中文解释位于 `reports/`。
+
+## 第四阶段复现
+
+```powershell
+.\.venv\Scripts\python.exe -m src.modeling.run_stage4
+.\.venv\Scripts\python.exe -m pytest -q
+```
+
+流程只使用训练集完成变量筛选、五折交叉验证、参数搜索和拟合，验证集用于比较原始比例与类别权重方案。最终评分卡采用基准分 600、好坏 Odds 20:1、PDO 20，并根据训练分数确定 A–E 等级。模型和逐行评分写入 Git 忽略目录；综合 Excel、8 张图、中文解释和第五本 Notebook 为可提交交付。第四阶段不读取测试集标签。
 
 ## 七阶段开发计划
 

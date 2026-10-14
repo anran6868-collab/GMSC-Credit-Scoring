@@ -1,0 +1,38 @@
+{
+  "selected_scheme": "原始比例",
+  "selected_feature_count": 8,
+  "selected_features": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "DebtRatio",
+    "severe_delinquency_flag",
+    "delinquency_severity_score",
+    "real_estate_loan_share",
+    "estimated_monthly_debt",
+    "residual_income_per_capita"
+  ],
+  "selected_C": 0.1,
+  "threshold": 0.19381917000546303,
+  "validation_metrics": {
+    "auc": 0.8595863339470943,
+    "ks": 0.566737002590159,
+    "pr_auc": 0.3584065708390137,
+    "precision": 0.39395546129374337,
+    "recall": 0.4940159574468085,
+    "f1": 0.4383480825958702,
+    "brier": 0.05026725859080599,
+    "log_loss": 0.18160569747409874,
+    "calibration_intercept": 0.030214820389866406,
+    "calibration_slope": 1.0112508949499164
+  },
+  "grade_boundaries": [
+    585.4187666063689,
+    611.0504890329896,
+    629.6588090911786,
+    640.8519940239293
+  ],
+  "chart_count": 8,
+  "test_label_read": false,
+  "model": "D:\\AI project\\GMSC-Credit-Scoring\\models\\stage4_logistic_scorecard.joblib",
+  "report": "D:\\AI project\\GMSC-Credit-Scoring\\reports\\excel\\stage4_logistic_scorecard.xlsx"
+}

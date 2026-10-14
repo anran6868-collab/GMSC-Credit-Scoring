@@ -19,6 +19,7 @@ logs/*
 # Model files
 models/*.pkl
 models/*.joblib
+models/*.json
 
 # Data files (keep documentation/placeholders only)
 data/raw/*
