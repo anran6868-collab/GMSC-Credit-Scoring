@@ -11,3 +11,8 @@ __all__ = [
     "select_features",
     "train_candidates",
 ]
+"""Logistic 与树模型训练、解释和持久化。"""
+
+from .tree_models import TreeModelBundle, TreeTrainingConfig
+
+__all__ = ["TreeModelBundle", "TreeTrainingConfig"]
