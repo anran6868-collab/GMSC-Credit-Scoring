@@ -11,6 +11,7 @@ htmlcov/
 
 # Notebook
 .ipynb_checkpoints/
+node_modules/
 
 # Logs (keep the directory placeholder)
 logs/*
@@ -33,6 +34,13 @@ data/features/*
 *.tmp
 *.temp
 ~$*
+reports/stage5_tables/
+reports/stage5_workbook_previews/
+reports/excel/stage5_model_comparison.xlsx
+reports/excel/*.inspect.ndjson
+reports/stage7_qa/
+reports/stage7_render/
+reports/stage7_workbook_preview.png
 
 # Editors and operating systems
 .vscode/
